@@ -1,9 +1,9 @@
 /* eslint-disable no-useless-catch */
-import { slugify } from "~/utils/formatters"
-import { boardModel } from "~/models/boardModel"
-import ApiError from "~/utils/ApiError"
-import { StatusCodes } from "http-status-codes"
-import { cloneDeep } from "lodash"
+import { slugify } from '~/utils/formatters'
+import { boardModel } from '~/models/boardModel'
+import ApiError from '~/utils/ApiError'
+import { StatusCodes } from 'http-status-codes'
+import { cloneDeep } from 'lodash'
 const createNew = async (reqBody) => {
   try {
     const newBoard = {
@@ -26,7 +26,7 @@ const createNew = async (reqBody) => {
 const getDetails = async (boardId) => {
   try {
     const board = await boardModel.getDetails(boardId)
-    if (!board) throw new ApiError(StatusCodes.NOT_FOUND, "Board not found!")
+    if (!board) throw new ApiError(StatusCodes.NOT_FOUND, 'Board not found!')
 
     //B1: Deep Clone board ra một cái mới để xử lý, không ảnh hưởng đến board ban đầu
     const resBoard = cloneDeep(board)
