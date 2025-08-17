@@ -18,9 +18,18 @@ const START_SERVER = () => {
   app.use('/v1', APIs_V1)
   // Middleware xử lý lỗi tập trung
   app.use(errorHandlingMiddleware)
-  app.listen(env.APP_PORT, env.APP_HOST, () => {
-    console.log(`3. Hi ${env.AUTHOR} , Back-end is running at Host ${env.APP_HOST} and Port ${env.APP_PORT}`)
-  })
+
+  if (env.BUILD_MODE === 'production') {
+    app.listen(process.env.PORT, () => {
+      console.log(`3. Production: Hi ${env.AUTHOR} , Back-end is running at  Port ${process.env.PORT}`)
+    })
+  } else {
+    app.listen(env.LOCAL_DEV_APP_PORT, env.LOCAL_DEV_APP_HOST, () => {
+      console.log(
+        `3. Local Dev: Hi ${env.AUTHOR} , Back-end is running at Host ${env.LOCAL_DEV_APP_HOST} and Port ${env.LOCAL_DEV_APP_PORT}`
+      )
+    })
+  }
   exitHook(() => {
     console.log('4. Server is shutting down...')
     CLOSE_DB()
