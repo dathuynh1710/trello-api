@@ -9,10 +9,10 @@ API này được phát triển bởi [dathuynh1710](https://github.com/dathuynh
 
 ## Các chức năng chính
 
-✅ Xây dựng **RESTful API** cho Board, Column, Card
-✅ Kết nối cơ sở dữ liệu bằng **MongoDB**
-✅ Xử lý **Validation** với **Joi**
-✅ Deploy API lên **Render**: [https://trello-api-4mi7.onrender.com](https://trello-api-4mi7.onrender.com)
+- ✅ Xây dựng **RESTful API** cho Board, Column, Card
+- ✅ Kết nối cơ sở dữ liệu bằng **MongoDB**
+- ✅ Xử lý **Validation** với **Joi**
+- ✅ Deploy API lên **Render**: [https://trello-api-4mi7.onrender.com](https://trello-api-4mi7.onrender.com)
 
 ---
 
